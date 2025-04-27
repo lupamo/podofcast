@@ -1,9 +1,9 @@
-import Navbar from '../components/layout/Navbar';
+import Header from '../components/layout/Header';
 import './globals.css';
 export default function Home() {
   return (
     <div>
-      <Navbar />
+      <Header />
     </div>
   );
 }
