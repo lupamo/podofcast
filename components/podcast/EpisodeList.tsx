@@ -1,26 +1,47 @@
-import type { NextPage } from 'next';
-import Carousel from './Curousel';
+// components/Episodes.tsx
+import Carousel from '../podcast/Carousel';
 
-import image1 from '../../public/images/cover-1.png';
-import image2 from '../../public/images/cover-2.png';
-import image3 from '../../public/images/cover-3.png';
-import image4 from '../../public/images/cover-4.png';
-import image5 from '../../public/images/cover-4.png';
+// Sample episode data
+const episodeData = [
+  {
+    id: '1',
+    image: '/images/cover-1.png',
+    title: 'Self-confidence'
+  },
+  {
+    id: '2',
+    image: '/images/cover-2.png',
+    title: 'Perplexed Mind'
+  },
+  {
+    id: '3',
+    image: '/images/cover-3.png',
+    title: 'Women\'s Rights'
+  },
+  {
+    id: '4',
+    image: '/images/cover-4.png',
+    title: 'Social'
+  },
+  {
+    id: '5',
+    image: '/images/cover-5.png',
+    title: 'Health'
+  }
+];
 
-const EpisodeList: NextPage = () => {
-  const images = [
-    image1.src,
-    image2.src,
-    image3.src,
-    image4.src,
-    image5.src,
-  ];
-
+const Episodes = () => {
   return (
-    <div>
-      <Carousel images={images} interval={4000} />
-    </div>
+    <section className="py-12 px-4 md:px-10 bg-[#F7EDE8]">
+      <div className="container mx-auto">
+        <div className="flex justify-between items-center mb-8">
+          <h2 className="text-3xl m-3 md:text-4xl font-bold">Recent Episodes</h2>
+        </div>
+        
+        <Carousel items={episodeData} autoplaySpeed={5000} />
+      </div>
+    </section>
   );
 };
 
-export default EpisodeList;
+export default Episodes;
