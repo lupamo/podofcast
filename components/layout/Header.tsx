@@ -56,13 +56,13 @@ const Header = () => {
 		</div>
 		<div className="flex flex-col items-center justify-center py-5 px-4 md:px-10">
 			<hr className="w-full border border-gray-300 m-2" />
-			<div className='flex flex-col md:justify-center items-center justify-center py-10'>
-				<p className='px-3 py-3'>Supported By:</p>
-				<img className='px-3 py-3' src={spotify.src} alt="spotify" />
-				<img className='px-3 py-3' src={google.src} alt="google" />
-				<img className='px-3 py-3' src={youtube.src} alt="youtube" />
+			<div className='flex flex-col md:flex-row items-center justify-center space-x-4 md:space-x-0 md:space-y-4 py-5'>
+				<p className='px-3 py-2'>Supported By:</p>
+				<img className='px-3 py-2' src={spotify.src} alt="spotify" />
+				<img className='px-3 py-2' src={google.src} alt="google" />
+				<img className='px-3 py-2' src={youtube.src} alt="youtube" />
 			</div>
-			<hr className="w-full border border-gray-300 m-2" />
+			<hr className="w-full border border-gray-300" />
 		</div>
 	</>
   )

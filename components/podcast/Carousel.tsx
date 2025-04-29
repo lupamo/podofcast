@@ -56,7 +56,7 @@ const Carousel = ({ items, autoplaySpeed = 1000 }: CarouselProps) => {
         className="flex overflow-x-scroll scrollbar-hide snap-x snap-mandatory"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
-        {items.map((item, index) => (
+        {items.map((item) => (
           <div 
             key={item.id} 
             className="min-w-[250px] sm:min-w-[300px] md:min-w-[320px] h-[400px] mx-3 flex-shrink-0 snap-center relative rounded-lg overflow-hidden group"
