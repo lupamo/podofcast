@@ -1,8 +1,11 @@
 'use client';
 import React from 'react';
+import TestimonialSection from '../ul/TestimonialCards';
 import swirl from '../../public/images/scribble.png'
 import illustrator1 from '../../public/images/Illustration-1.svg'
 import swirl2 from '../../public/images/Vector4.png'
+import swirl3 from '../../public/images/scribble-2.png'
+import sparkle from '../../public/images/sparkle.png'
 import avatar from '../../public/images/avatar.png'
 import spot from '../../public/images/spot.png'
 import star from '../../public/images/Star4.png'
@@ -76,6 +79,38 @@ const Inspiration = () => {
 						{/* Empty div for spacing where star extends */}
 						<div className="w-1/12 md:w-1/6"></div>
 					</div>
+				</div>
+			</div>
+			{/* --- Listeners Say----- */}
+			<div className='bg-[#EDF3F7]'>
+				<div className='relative flex w-full bg-[#EDF3F7] flex-col items-center mt-2 justify-center p-4 md:flex-row md:justify-between md:p-8'>
+					<img 
+						src={swirl3.src}
+						alt="swirl"
+						className="absolute mt-3 h-[100px] max-w-xs mx-auto md:absolute md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2"
+					/>
+				</div>
+				<div className='relative flex w-full flex-col items-center mt-5 justify-center p-4 md:flex-row md:justify-between md:p-8'>
+					<div className="relative flex flex-col items-center">
+						{/* Sparkle image positioned on top left of h2 */}
+						<div className="absolute left-0 top-0 transform -translate-x-1/4 -translate-y-1/4 md:-translate-x-1/3 md:-translate-y-1/3 w-12 sm:w-16 md:w-20 lg:w-24 z-10">
+							<img src={sparkle.src} alt="spark" className="w-full h-auto" />
+						</div>
+						
+						{/* Main heading */}
+						<h2 className='relative text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-wider font-[700] text-[#000000] text-center mt-6'>
+							What our listeners say <br/>
+						</h2>
+						
+						{/* Subheading with reduced size */}
+						<h4 className='text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl tracking-wide m-5 font-[500] text-[#424141] text-center max-w-4xl'>
+							Their experience throughout the platform
+						</h4>
+					</div>
+					
+				</div>
+				<div>
+					<TestimonialSection />
 				</div>
 			</div>
       </div>
