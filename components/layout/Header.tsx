@@ -9,6 +9,7 @@ import youtube from '../../public/images/Youtube.png'
 import Button from '../ul/Buttons'
 import EpisodeList from '../podcast/EpisodeList'
 import Insipiration from './Inspiration'
+import Membership from './Membership';
 
 const Header = () => {
 	const [isVisible, setIsVisible] = useState(false);
@@ -66,6 +67,7 @@ const Header = () => {
 				<hr className="w-full border border-gray-300" />
 			</div>
 			<Insipiration />
+			<Membership />
 		</>
   	)
 }
