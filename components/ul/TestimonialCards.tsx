@@ -21,11 +21,11 @@ interface TestimonialCarouselProps {
 
 const TestimonialCard: React.FC<{ testimonial: TestimonialData }> = ({ testimonial }) => {
   return (
-    <div className="flex-shrink-0 w-full md:w-[500px] lg:w-[600px] p-6 mx-4 snap-center">
+    <div className="flex-shrink-0 bg-[#ffffff] w-full md:w-[500px] lg:w-[500px] p-6 mx-4 snap-center">
       <div className="h-full flex flex-col justify-between">
         <div>
-          <div className="text-[#CD4631] text-6xl font-serif">"</div>
-          <p className="text-lg md:text-xl mb-6">
+          <div className="text-[#CD4631] text-6xl font-serif">&ldquo;</div>
+          <p className="text-sm md:text-xl mb-6">
             {testimonial.quote}
           </p>
         </div>
@@ -202,8 +202,8 @@ const TestimonialSection: React.FC = () => {
       quote: "Lorem ipsum dolor sit amet consectet piscing elit, sed do eiusmod tempor incidi ut labore et dolore magna aliqua.",
       author: "Emily Blunt",
       company: "",
-      image: '/images/avatar-1.png', // Fixed: Use absolute path starting with /
-      platformIcon: '/images/google-podcast.png', // Fixed: Use absolute path with real file name
+      image: '/images/avatar-2.png',
+      platformIcon: '/images/google.png', 
       platformName: "Google Podcast"
     },
     {
@@ -211,8 +211,8 @@ const TestimonialSection: React.FC = () => {
       quote: "Lorem ipsum dolor sit amet consectet piscing elit, sed do eiusmod tempor incidi ut labore et dolore magna aliqua.",
       author: "Michael Scott",
       company: "",
-      image: '/images/avatar-2.png', // Fixed: Use absolute path starting with /
-      platformIcon: '/images/apple-podcast.png', // Fixed: Use absolute path with real file name
+      image: '/images/avatar-3.png', // Fixed: Use absolute path starting with /
+      platformIcon: '/images/spot.png', // Fixed: Use absolute path with real file name
       platformName: "Apple Podcast"
     }
   ];

@@ -61,7 +61,7 @@ const Inspiration = () => {
 					
 					{/* Testimonial content */}
 					<div className='w-full md:w-4/6 flex flex-col items-center justify-center py-8'>
-						<h2 className="text-6xl md:text-7xl lg:text-9xl font-bold text-[#CD4631] leading-none">"</h2>
+						<h2 className="text-6xl md:text-7xl lg:text-9xl font-bold text-[#CD4631] leading-none">&ldquo;</h2>
 						<h2 className="text-lg md:text-xl lg:text-2xl text-center font-medium my-4">
 						One of the best daily podcasts that<br/>covers every topic on Spotify.
 						</h2>
