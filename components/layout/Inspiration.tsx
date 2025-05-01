@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState, useEffect, useRef} from 'react';
 import TestimonialSection from '../ul/TestimonialCards';
 import swirl from '../../public/images/scribble.png'
 import illustrator1 from '../../public/images/Illustration-1.svg'
@@ -12,6 +12,85 @@ import star from '../../public/images/Star4.png'
 import illustrator2 from '../../public/images/Illustration-2.svg'
 
 const Inspiration = () => {
+	const [isHeadingVisible, setIsHeadingVisible] = useState(false);
+	const [isIllustratorsVisible, setIsIllustratorsVisible] = useState(false);
+	const [isTestimonialVisible, setIsTestimonialVisible] = useState(false);
+	const [isListenerSectionVisible, setIsListenerSectionVisible] = useState(false);
+
+	// Ref for sections we want to observe
+	const headingRef = useRef(null);
+	const illustratorsRef = useRef(null);
+	const testimonialRef = useRef(null);
+	const listenerSectionRef = useRef(null);
+
+
+	useEffect(() => {
+		// intersection observer for sections
+		const observerOptions = {
+			root: null,
+			rootMargin: '0px',
+			threshold: 0.5
+		};
+
+		const headingObserver = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					setIsHeadingVisible(true);
+					headingObserver.unobserve(entry.target);
+				}
+			});
+		}, observerOptions);
+
+		const illustratorsObserver = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					setIsIllustratorsVisible(true);
+					illustratorsObserver.unobserve(entry.target);
+				}
+			});
+		}, observerOptions);
+
+		const testimonialObserver = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					setIsTestimonialVisible(true);
+					testimonialObserver.unobserve(entry.target);
+				}
+			});
+		}, observerOptions);
+
+		const listenerSectionObserver = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					setIsListenerSectionVisible(true);
+					listenerSectionObserver.unobserve(entry.target);
+				}
+			});
+		}, observerOptions);
+
+		// observing if refs are available
+		if (headingRef.current) {
+			headingObserver.observe(headingRef.current);
+		}
+		if (illustratorsRef.current) {
+			illustratorsObserver.observe(illustratorsRef.current);
+		}
+		if (testimonialRef.current) {
+			testimonialObserver.observe(testimonialRef.current);
+		}
+		if (listenerSectionRef.current) {
+			listenerSectionObserver.observe(listenerSectionRef.current);
+		}
+
+		return () => {
+			if (headingRef.current) headingObserver.unobserve(headingRef.current);
+			if (illustratorsRef.current) illustratorsObserver.unobserve(illustratorsRef.current);
+			if (testimonialRef.current) testimonialObserver.unobserve(testimonialRef.current);
+			if (listenerSectionRef.current) testimonialObserver.unobserve(listenerSectionRef.current);
+		}
+
+	}, [])
+
   return (
 	<>
 		<div className="bg-[#ffffff]">
@@ -22,19 +101,29 @@ const Inspiration = () => {
 					className="absolute mt-3 h-[100px] max-w-xs mx-auto md:absolute md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2"
 				/>
 			</div>
-			<div className='relative flex w-full flex-col items-center mt-5 justify-center p-4 md:flex-row md:justify-between md:p-8'>
-				<h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-wider mb-5 font-[700] text-[#000000] text-center'>
+			<div 
+				ref={headingRef}
+				className='relative flex w-full flex-col items-center mt-5 justify-center p-4 md:flex-row md:justify-between md:p-8'>
+				<h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-wider mb-5 font-[700] text-[#000000] text-center transition-all duration-1000 transform ${
+						isHeadingVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+						}`}>
 					Talk. Listen. Get inspired <br/>
 					by every minute of it.
 				</h1>
 
 			</div>
-			<div className='flex flex-col md:flex-row items-center justify-between py-5 px-4 md:px-10'>
-				<div className='w-full md:w-1/2 flex flex-col items-center justify-center space-x-4 md:space-x-0 md:space-y-4 py-5'>
+			<div
+				ref={illustratorsRef} 
+				className='flex flex-col md:flex-row items-center justify-between py-5 px-4 md:px-10'>
+				<div className={`w-full md:w-1/2 flex flex-col items-center justify-center space-x-4 md:space-x-0 md:space-y-4 py-5 transition-all duration-1000 transform ${
+					isIllustratorsVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
+				}`}>
 					<img src={illustrator1.src} alt="illustrator1" />
 					<p className='text-center w-4/5 mt-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet maxime dolore veritatis sunt, cumque itaque, nulla? Modi magnam ex voluptate consectetur!</p>
 				</div>
-				<div className='flex flex-col w-full md:w-1/2 items-center justify-center space-x-4 md:space-x-0 md:space-y-4 py-5'>
+				<div className={`flex flex-col w-full md:w-1/2 items-center justify-center space-x-4 md:space-x-0 md:space-y-4 py-5 transition-all duration-1000 transform ${
+					isIllustratorsVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
+				}`}>
 					<img src={illustrator2.src} alt="illustrator2" />
 					<p className='text-center w-4/5 mt-4'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus, sint ut ipsa dolorem enim debitis eos aut consequuntur labore dignissimos vel est neque rerum!</p>
 				</div>
@@ -43,7 +132,11 @@ const Inspiration = () => {
 			{/* ---small box----- */}
 
 			<div className='bg-[#ffffff] w-full flex items-center justify-center py-16'>
-				<div className='relative w-full max-w-7xl mx-4 md:mx-8 lg:mx-auto bg-[#F7EDE8] rounded-lg '>
+				<div 
+				ref={testimonialRef}
+				className={`relative w-full max-w-7xl mx-4 md:mx-8 lg:mx-auto bg-[#F7EDE8] rounded-lg transition-all duration-1000 transform ${
+					isTestimonialVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
+				}`}>
 					{/* Star image - positioned at top-right edge */}
 					<div className='absolute top-0 right-0 transform translate-x-1/4 -translate-y-1/4 md:translate-x-1/3 z-1000'>
 						<img src={star.src} alt="star" className="w-24 md:w-32 lg:w-40" />
@@ -90,8 +183,12 @@ const Inspiration = () => {
 						className="absolute mt-3 h-[100px] max-w-xs mx-auto md:absolute md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2"
 					/>
 				</div>
-				<div className='relative flex w-full flex-col items-center mt-5 justify-center p-4 md:flex-row md:justify-between md:p-8'>
-					<div className="relative flex flex-col items-center">
+				<div 
+				ref={listenerSectionRef}
+				className='relative flex w-full flex-col items-center mt-5 justify-center p-4 md:flex-row md:justify-between md:p-8'>
+					<div className={`relative flex flex-col items-center transition-all duration-1000 transform ${
+							isListenerSectionVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+						}`}>
 						{/* Sparkle image positioned on top left of h2 */}
 						<div className="absolute left-0 top-0 transform -translate-x-1/4 -translate-y-1/4 md:-translate-x-1/3 md:-translate-y-1/3 w-12 sm:w-16 md:w-20 lg:w-24 z-10">
 							<img src={sparkle.src} alt="spark" className="w-full h-auto" />
