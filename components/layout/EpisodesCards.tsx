@@ -25,7 +25,7 @@ const episodes: Episode[] = [
     image: '/images/cover-1.png',
     duration: '45:00',
     date: '14 Jan',
-    hosts: ['/images/avatar-11.png', '/images/avatar-3.png']
+    hosts: ['/images/avatar-11.png', '/images/avatar-12.png']
   },
   {
     id: 2,
@@ -35,7 +35,7 @@ const episodes: Episode[] = [
     image: '/images/cover-2.png',
     duration: '38:45',
     date: '7 Jan',
-    hosts: ['/images/avatar-2.png', '/images/avatar-3.png']
+    hosts: ['/images/avatar-11.png', '/images/avatar-12.png']
   },
   {
     id: 3,
@@ -45,37 +45,37 @@ const episodes: Episode[] = [
     image: '/images/cover-3.png',
     duration: '52:10',
     date: '21 Dec',
-    hosts: ['/images/avatar-11.png', '/images/avatar-3.png']
+    hosts: ['/images/avatar-11.png', '/images/avatar-12.png']
   },
   {
     id: 4,
     episodeNumber: 2,
     title: 'How to Deal with Self-Confidence',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac nibh auctor, faucibus odio semper, commodo dolor.',
-    image: '/images/cover-3.png',
+    image: '/images/cover-4.png',
     duration: '41:35',
     date: '14 Dec',
-    hosts: ['/images/avatar-2.png', '/images/avatar-3.png']
+    hosts: ['/images/avatar-11.png', '/images/avatar-12.png']
   },
   {
     id: 5,
     episodeNumber: 1,
     title: 'Types of Social Classes of People',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac nibh auctor, faucibus odio semper, commodo dolor.',
-    image: '/images/cover-3.png',
+    image: '/images/cover-5.png',
     duration: '39:20',
     date: '7 Dec',
-    hosts: ['/images/avatar-2.png', '/images/avatar-3.png']
+    hosts: ['/images/avatar-11.png', '/images/avatar-12.png']
   },
   {
     id: 6,
     episodeNumber: 0,
     title: 'Are you a Perplexed Mind Person?',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac nibh auctor, faucibus odio semper, commodo dolor.',
-    image: '/images/cover-4.png',
+    image: '/images/cover-2.png',
     duration: '45:15',
     date: '30 Nov',
-    hosts: ['/images/avatar-3.png', '/images/avatar-1.png']
+    hosts: ['/images/avatar-11.png', '/images/avatar-12.png']
   }
 ];
 
@@ -85,7 +85,7 @@ interface EpisodeCardProps {
 
 const EpisodeCard: React.FC<EpisodeCardProps> = ({ episode }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+    <div className="bg-white rounded-lg shadow-md overflow-hidden cursor-hover">
       <div className="relative">
         <div className="w-full h-48 relative">
           <Image 
@@ -114,20 +114,23 @@ const EpisodeCard: React.FC<EpisodeCardProps> = ({ episode }) => {
         </div>
         
         <div className="flex justify-between items-center mt-4">
-          <div className="flex -space-x-2">
+          <div className="flex -space-x-2 items-center">
+            <div className="text-xs mx-2 text-gray-700">Hosted by:</div>
             {episode.hosts.map((host: string, index: number) => (
-              <div key={index} className="w-6 h-6 rounded-full overflow-hidden border-2 border-white">
-                <Image 
-                  src={host} 
-                  alt="Host" 
-                  width={24}
-                  height={24}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            ))}
+                
+                <div key={index} className="w-6 h-6 rounded-full overflow-hidden border-2 border-white">
+                  <Image 
+                    src={host} 
+                    alt="Host" 
+                    width={24}
+                    height={24}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                
+              ))}
           </div>
-          <div className="text-xs text-gray-500">Hosted by</div>
+          
         </div>
       </div>
     </div>

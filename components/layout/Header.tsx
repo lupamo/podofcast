@@ -10,6 +10,8 @@ import Button from '../ul/Buttons'
 import EpisodeList from '../podcast/EpisodeList'
 import Insipiration from './Inspiration'
 import Membership from './Membership';
+import RecentEpisodes from './EpisodesCards';
+import Sponsors from './Sponsors';
 
 const Header = () => {
 	const [isVisible, setIsVisible] = useState(false);
@@ -69,6 +71,8 @@ const Header = () => {
 				</div>
 				<Insipiration />
 				<Membership />
+				<RecentEpisodes />
+				<Sponsors />
 			</div>
 		</>
   	)
