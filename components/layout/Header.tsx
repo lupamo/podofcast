@@ -12,7 +12,9 @@ import Insipiration from './Inspiration'
 import Membership from './Membership';
 import RecentEpisodes from './EpisodesCards';
 import Sponsors from './Sponsors';
-import ArticleNews from './ArticleNews'
+import ArticleNews from './ArticleNews';
+import AppStore from './AppStore';
+import Footer from './Footer';
 
 const Header = () => {
 	const [isVisible, setIsVisible] = useState(false);
@@ -75,6 +77,8 @@ const Header = () => {
 				<RecentEpisodes />
 				<Sponsors />
 				<ArticleNews />
+				<AppStore />
+				<Footer />
 			</div>
 		</>
   	)

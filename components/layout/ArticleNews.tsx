@@ -55,7 +55,7 @@ const ArticleNews = () => {
             </div>
           </div>
         </div>
-        <div className='flex justify-center align-center my-3'>
+        <div className='flex justify-center m-5 align-center my-3'>
           <Button text="Browse All" onClick={() => console.log('Browse')} />
         </div>
       </div>
