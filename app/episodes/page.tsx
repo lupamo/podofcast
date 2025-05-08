@@ -2,7 +2,11 @@ import React from 'react'
 
 const Episodes = () => {
   return (
-	<div>sup</div>
+	<div className='w-full overflow-hidden'>
+    <div className='flex'>
+      sup
+    </div>
+  </div>
   )
 }
 

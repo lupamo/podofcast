@@ -42,7 +42,7 @@ const Header = () => {
 					</div>
 					<div className="text-center md:w-1/2 z-10 my-8 md:my-0">
 						<h1 className="text-7xl sm:text-7xl md:text-6xl lg:text-7xl xl:text-8xl mb-5 font-bold text-[#000000]">
-							your Daily <br />
+							Your Daily <br />
 							<span className={`text-7xl text-[#CD4631] sm:text-7xl md:text-6xl lg:text-7xl xl:text-8xl inline-block transition-all duration-1000 transform ${
 							isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
 							}`}
