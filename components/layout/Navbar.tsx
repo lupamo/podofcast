@@ -31,7 +31,9 @@ const Navbar = () => {
 		<div className=" flex flex-wrap items-center justify-between">
         	{/* Logo */}
 			<div>
-				<img src={logo.src} className="w-12 h-12" alt="Logo" />
+        <Link href="/">
+          <img src={logo.src} className="w-12 h-12" alt="Logo" />
+        </Link>
 			</div>
 			<div className={`${isMenuOpen ? 'flex' : 'hidden'} md:flex flex-col mx-12 md:flex-row w-full md:w-auto md:items-center mt-4 md:mt-0`}>
 				<ul className="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-6 font-bold text-base mb-4 md:mb-0 md:mr-6">
