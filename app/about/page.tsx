@@ -4,6 +4,7 @@ import Button from '../../components/ul/Buttons'
 import Vector4 from '../../public/images/shape-swirl.svg'
 import Navbar from '../../components/layout/Navbar'
 import stars from '../../public/images/stars.png'
+import mic from '../../public/images/mic.png'
 import gsap from 'gsap'
 
 const About = () => {
@@ -96,7 +97,7 @@ const About = () => {
 		  	<button className='px-6 py-3 bg-black text-white font-bold uppercase rounded-md shadow-md hover:bg-gray-900 transition-colors'>Subscribe</button>
 		  </div>
         </div>
-        <div className="absolute right-2 md:static md:flex md:justify-center md:w-1/4 lg:w-1/3 mt-4 md:mb-50 z-10">
+        <div className="absolute -right-4 md:static md:flex md:justify-center md:w-1/4 lg:w-1/3 mt-4 md:mb-50 z-10">
           <img 
             ref={starsRef}
             src={stars.src} 
@@ -105,11 +106,31 @@ const About = () => {
           />
         </div>
       </div>
-	  <div className='w-full bg-[#ffffff]'>
-	  	<div className='w-full flex flex-col md:flex-row justify-center items-center bg-[#F9F9F9]'>
 
-		</div>
-	  </div>
+      {/* ----What Our Listeners say about us---------- */}
+      <div className='w-full bg-[#ffffff]'>
+        <div className='w-full z-100 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center -mt-6'>
+              <div className='border rounded-lg border-[#000000] w-[80%] max-w-sm h-[200px] flex flex-col justify-center items-center p-4'>
+                <h2 className='text-[#CD4631] text-4xl font-bold mb-3'>72<span className='text-[#000000]'>K</span></h2>
+                <p>Community Members</p>
+              </div>
+              <div className='border rounded-lg border-[#000000] w-[80%] max-w-sm h-[200px] flex flex-col justify-center items-center p-4'>
+                <h2 className='text-[#CD4631] text-4xl font-bold mb-3'>128<span className='text-[#000000]'>K</span></h2>
+                <p>Subscribers</p>
+              </div>
+              <div className='border rounded-lg border-[#000000] w-[80%] max-w-sm h-[200px] flex flex-col justify-center items-center p-4'>
+                <h2 className='text-[#CD4631] text-4xl font-bold mb-3'>59<span className='text-[#000000]'>K</span></h2>
+                <p>Daily Listeners</p>
+              </div>
+        </div>
+        <div className='w-full flex flex-col justify-center items-center mt-10'>
+          <h2>What our listeners say</h2>
+          <p>Their experience throughout every platform</p>
+          <div className='w-[80%] flex flex-col justify-center items-center p-4'>
+            <img src={mic.src} alt="mic" />
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
